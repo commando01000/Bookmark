@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f7ecde;
+}
+
+::selection {
+  background-color: #fec260;
+  color: #352e28;
+}
+
+#home h2 {
+  font-family: "Righteous", sans-serif;
+  font-size: 25px;
+  background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#home h1 {
+  font-family: "Pacifico", sans-serif;
+  position: relative;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 60px;
+  color: rgb(53, 46, 40);
+}
+
+#home h1::after {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 25%;
+  left: 43%;
+  bottom: 10px;
+  background-color: #fec260;
+  transition: height 350ms;
+  z-index: -1;
+}
+
+#home h1:hover::after {
+  height: 50%;
+}
+
+.circles span {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.rules i {
+  color: #bb4120;
+}

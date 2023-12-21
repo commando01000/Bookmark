@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="home">
+      <h1 class="text-center my-5">Bookmarker</h1>
+
+      <h2 class="text-center my-5">
+        <i class="fa-solid fa-bookmark"></i>Bookmark your favorite sites
+        <i class="fa-solid fa-bookmark"></i>
+      </h2>
+      <div class="container m-auto w-75">
+        <label for="bookmarkName">Site name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="bookmarkName"
+          onkeyup="isValidName()"
+          placeholder="Bookmark Name"
+        />
+        <label for="SiteURL">Site URL</label>
+        <input
+          type="text"
+          class="form-control"
+          id="SiteURL"
+          onblur="isValidUrl()"
+          placeholder="Website URL"
+        />
+        <button
+          onclick="storeWebsite()"
+          class="btn btn-warning my-3 m-auto px-5 d-flex justify-content-center"
+        >
+          Submit
+        </button>
+        <div class="table-responsive">
+          <table class="table table-light bg-light">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- <div class="box">
+        <div
+          class="container d-flex justify-content-center align-items-center"
+        ></div>
+      </div> -->
+      <div
+        id="box"
+        class="box-info position-absolute start-0 top-0 w-100 h-100 d-none justify-content-center align-items-center"
+      >
+        <div class="box-content bg-white p-4 rounded-2 shadow-lg">
+          <header
+            class="box-header w-100 d-flex justify-content-between align-items-center mb-4"
+          >
+            <div class="circles d-flex p-2">
+              <span class="rounded-circle me-2 bg-danger"></span>
+              <span class="rounded-circle me-2 bg-warning"></span>
+              <span class="rounded-circle me-2 bg-success"></span>
+            </div>
+            <button class="btn border-0" id="closeBtn">
+              <i class="fa-solid fa-xmark close fs-3"></i>
+            </button>
+          </header>
+          <p class="m-0 pb-2">
+            Site Name or Url is not valid, Please follow the rules below :
+          </p>
+          <ol class="rules list-unstyled m-0">
+            <li>
+              <i class="fa-regular fa-circle-right p-2"></i>Site name must
+              contain at least 3 characters
+            </li>
+            <li>
+              <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+              valid one
+            </li>
+          </ol>
+        </div>
+      </div>
+    </header>
+    <script src="script.js"></script>
+  </body>
+</html>
